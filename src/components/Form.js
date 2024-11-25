@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Form, InputGroup, Button } from "react-bootstrap";
 import { useField, useFormikContext } from "formik";
-import { Storage } from "aws-amplify";
-import kuuid from "kuuid";
+// import { Storage } from "aws-amplify";
+// import kuuid from "kuuid";
 import { Tooltip as BSTooltip } from "react-bootstrap";
 import { OverlayTrigger } from "react-bootstrap";
 // import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -207,20 +207,20 @@ const FileUpload = ({ label, ...props }) => {
             label="click to upload"
             onChange={(e) => {
               const file = e.target.files[0];
-              const s3objectName = `${e.target.id}-${kuuid.id()}`;
-              Storage.put(s3objectName, file, {
-                level: "public", /// its not really public - the bucket is locked down
-                tagging: `name=${s3objectName}`,
-                progressCallback: (p) => {
-                  setProgress(Math.floor((p.loaded / p.total) * 100));
-                },
-              })
-                .then(() => {
-                  setFieldValue(name, `#s3#${s3objectName}`);
-                })
-                .catch(() => {
-                  setProgress(0);
-                });
+              // const s3objectName = `${e.target.id}-${kuuid.id()}`;
+              // Storage.put(s3objectName, file, {
+              //   level: "public", /// its not really public - the bucket is locked down
+              //   tagging: `name=${s3objectName}`,
+              //   progressCallback: (p) => {
+              //     setProgress(Math.floor((p.loaded / p.total) * 100));
+              //   },
+              // })
+              //   .then(() => {
+              //     setFieldValue(name, `#s3#${s3objectName}`);
+              //   })
+              //   .catch(() => {
+              //     setProgress(0);
+              //   });
             }}
           />
           <Form.Control.Feedback type="invalid">
