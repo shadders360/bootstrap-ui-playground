@@ -47,26 +47,36 @@ function ComponentShowcase() {
     {
       title: "Select Example",
       component: (
-        <Select
-          label="Sample Select"
-          name="select"
-          options={["Option 1", "Option 2", "Option 3"]}
-          infoicon="This is a sample select field"
-          placeholder="Choose an option"
-          md="6"
-        />
+        <>
+          <Select
+            label="Sample Select"
+            name="select"
+            options={["Option 1", "Option 2", "Option 3"]}
+            infoicon="This is a sample select field"
+            placeholder="Choose an option"
+            md="6"
+          />
+          <Select
+            label="Sample Select2"
+            name="select2"
+            options={["Option A", "Option B", "Option C"]}
+            infoicon="This is a sample select field2"
+            placeholder="Choose an option"
+            md="6"
+          />
+        </>
       ),
     },
     // {
     //   title: "File Upload Example",
     //   component: <FileUpload label="Upload File" name="fileUpload" />,
     // },
-    {
-      title: "DateTime Example",
-      component: (
-        <DateTimePicker label="Select Date and Time" name="dateTime" md={6} />
-      ),
-    },
+    // {
+    //   title: "DateTime Example",
+    //   component: (
+    //     <DateTimePicker label="Select Date and Time" name="dateTime" md={6} />
+    //   ),
+    // },
   ];
 
   const handleNext = () => {
@@ -92,6 +102,7 @@ function ComponentShowcase() {
           textInput: "",
           listInput: "",
           select: "",
+          select2: "",
           fileUpload: "",
           dateTime: null,
         }}
